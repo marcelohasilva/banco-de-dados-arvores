@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm;
+  }
+
+  .panel-header {
+    @apply flex items-center justify-between gap-4 border-b border-slate-100 px-6 py-5;
+  }
+
+  .section-title {
+    @apply text-sm font-bold text-slate-800;
+  }
+
+  .section-caption {
+    @apply mt-1 text-xs text-slate-400;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2.5 text-xs font-bold text-white shadow-sm shadow-blue-200 transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-600 transition hover:border-slate-300 hover:bg-slate-50;
+  }
+
+  .icon-button {
+    @apply rounded-lg px-2 py-1 text-lg leading-none text-slate-400 transition hover:bg-slate-100 hover:text-slate-700;
+  }
+
+  .field {
+    @apply flex flex-col gap-1.5 text-xs font-semibold text-slate-600;
+  }
+
+  .field em {
+    @apply ml-1 not-italic font-medium text-slate-400;
+  }
+
+  .field input,
+  .field select,
+  .panel input,
+  .panel select {
+    @apply min-w-0 rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm font-normal text-slate-700 shadow-sm transition placeholder:text-slate-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-100;
+  }
+
+  .badge {
+    @apply rounded-full bg-blue-50 px-2 py-1 text-[10px] font-bold text-brand;
+  }
+
+  .column-chip {
+    @apply inline-flex items-center gap-1 rounded-md bg-slate-50 px-2 py-1 text-[10px] text-slate-400;
+  }
+
+  .data-table {
+    @apply w-full min-w-max text-left text-sm;
+  }
+
+  .data-table th {
+    @apply bg-slate-50 px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-400;
+  }
+
+  .data-table td {
+    @apply border-t border-slate-100 px-5 py-3 text-xs text-slate-600;
+  }
+
+  .table-action {
+    @apply rounded-md px-2 py-1 text-xs font-semibold text-brand hover:bg-blue-50;
+  }
+
+  .tree-scroll {
+    @apply max-w-full overflow-x-auto bg-slate-50/50;
+  }
+
+  .tree-edge {
+    @apply stroke-slate-300;
+    stroke-width: 2;
+  }
+
+  .tree-node {
+    @apply fill-white stroke-blue-200;
+    stroke-width: 2;
+  }
+
+  .tree-node-root {
+    @apply fill-blue-600 stroke-blue-700;
+  }
+
+  .tree-key {
+    @apply fill-slate-800 text-[11px] font-bold;
+  }
+
+  .tree-node-root + .tree-key {
+    @apply fill-white;
+  }
+
+  .tree-balance,
+  .tree-balance-warning {
+    @apply fill-slate-400 text-[8px] font-semibold;
+  }
+
+  .tree-balance-warning {
+    @apply fill-amber-600;
+  }
+
+  .tree-root-label {
+    @apply fill-blue-600 text-[9px] font-bold tracking-widest;
+  }
+
+  .legend-dot {
+    @apply mr-1 inline-block h-2.5 w-2.5 rounded-full;
+  }
+
+  .legend-root {
+    @apply bg-blue-600;
+  }
+
+  .legend-node {
+    @apply border-2 border-blue-200 bg-white;
+  }
+
+  .relationship-table-card {
+    @apply rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md;
+  }
+
+  .relationship-table-icon {
+    @apply flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-brand;
+  }
+
+  .relationship-row {
+    @apply flex flex-col items-stretch gap-4 px-6 py-5 md:flex-row md:items-center;
+  }
+
+  .relationship-endpoint {
+    @apply min-w-0 flex-1 rounded-lg border border-slate-200 bg-slate-50 p-4 text-left transition hover:border-blue-300 hover:bg-blue-50;
+  }
+
+  .relationship-endpoint-target {
+    @apply border-emerald-200 bg-emerald-50/50 hover:border-emerald-300 hover:bg-emerald-50;
+  }
+
+  .relationship-endpoint-label {
+    @apply block text-[10px] font-bold uppercase tracking-wider text-slate-400;
+  }
+
+  .relationship-endpoint-name {
+    @apply mt-1 block text-sm font-bold text-slate-800;
+  }
+
+  .relationship-column {
+    @apply mt-1 block text-xs font-semibold text-brand;
+  }
+
+  .relationship-arrow {
+    @apply flex items-center justify-center gap-1 text-xl font-bold text-blue-500 md:w-20 md:flex-col;
+  }
+
+  .relationship-arrow span {
+    @apply hidden h-px flex-1 bg-blue-200 md:block md:h-8 md:w-px;
+  }
+}
